@@ -69,6 +69,8 @@ func BuildGmFromC4(
 
 	ret := BuildGm(gX, gY)
 
+	// step -> groups of "<=step"; or w/o calc step:
+	// for i = [0->grpNum) { [i*len/grpNum, (i+1)*len/grpNum) // skip lft>=rgt }
 	step := mathutil.CalcStep(gY)
 
 	var wg sync.WaitGroup
