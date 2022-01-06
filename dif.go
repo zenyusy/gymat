@@ -12,6 +12,7 @@ type DifRes struct {
 	V int
 }
 
+// cv2.matchTemplate(src, tpl, cv2.TM_SQDIFF)
 func SqrDif(tpl *Gm, src *Gm, thres int) DifRes {
 	if tpl.X > src.X || tpl.Y > src.Y || (tpl.X == src.X && tpl.Y == src.Y) {
 		return DifRes{-1, -1, -1} // SpDifRes: invalid input
